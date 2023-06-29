@@ -1,0 +1,44 @@
+modules:
+  macro:
+    - key: f-issue-fetch-macro
+      function: main
+      title: Jira Issue Fetch Macro
+      description: Dev Day Macro
+      config:
+        function: config-function-key
+
+  # Product events      
+  trigger:
+    - key: issue-create
+      function: event-issue-created
+      events:
+        - avi:jira:created:issue
+      filter:
+        ignoreSelf: true
+
+  # Async events
+  consumer:
+    - key: queue-consumer
+      # Name of the queue for which this consumer will be invoked
+      queue: queue-name
+      resolver:
+        function: consumer-function
+        # resolver function to be called with payload
+        method: event-listener
+
+  function:
+    - key: main
+      handler: index.run
+    - key: event-issue-created
+      handler: index.onIssueCreated
+    - key: config-function-key
+      handler: index.config
+    - key: consumer-function
+      handler: index.handler
+app:
+  id: ari:cloud:ecosystem::app/237968fc-0c1f-40c0-ba8e-65fd4741b936
+permissions:
+  scopes:
+    - read:jira-work
+    - read:confluence-content.summary
+    - storage:app

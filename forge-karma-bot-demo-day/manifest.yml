@@ -1,0 +1,23 @@
+permissions:
+  scopes:
+    - "read:pullrequest:bitbucket"
+    - "write:pullrequest:bitbucket"
+    - "storage:app"
+modules:
+  # registered the function code with Forge
+  function:
+    # given the function a name
+    - key: on-comment-created
+      # told forge where to find the code to run
+      handler: comment.onCreated
+  # define the trigger to run the code
+  trigger:
+    # given the trigger a name
+    - key: pull-request-commented
+      # told it what function we want to run when it fires
+      function: on-comment-created
+      # told it what events from BBC we want it to be triggered by.
+      events:
+        - avi:bitbucket:created:pullrequest-comment
+app:
+  id: ari:cloud:ecosystem::app/4a9311a2-5c94-4a2a-a69d-13a249c63440

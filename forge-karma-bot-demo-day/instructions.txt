@@ -1,0 +1,16 @@
+https://bitbucket.org/atlassian/dd23-forge-bitbucket/src/master/
+
+forge Create > name > show all > blank
+npm init (initialises package.json)
+git init (initialises git)
+npm i bitbucket-karma-helpers
+npm i @forge/api
+
+bitbucket.org/emunday_atlassian
+forge install -p bitbucket (-p because bitbucket is stil not "official)
+this is the "domain" for bitbucket: bitbucket.org/emunday_atlassian
+forge tunnel
+forge deploy
+forge install --upgrade
+
+test

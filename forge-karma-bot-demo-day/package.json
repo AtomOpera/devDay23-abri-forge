@@ -1,0 +1,15 @@
+{
+  "name": "karma-bot",
+  "version": "1.0.0",
+  "description": "Karma bot app for Forge in BBC",
+  "main": "comment.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "@forge/api": "^2.18.0",
+    "bitbucket-karma-helpers": "^1.0.6"
+  }
+}

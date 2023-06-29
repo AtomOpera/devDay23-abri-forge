@@ -1,0 +1,10 @@
+App Components:
+  Events:
+    Comment Created Event
+  Functions:
+    Get Comment Data
+    Parse Comment data to get score change
+    Read existing scores from Forge Storage
+    Update new scores in Forge Storage
+    Send comment Reply back to Bitbucket with new scores
+
